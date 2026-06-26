@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Route suprachar.com and www.suprachar.com to the /suprachar/ folder
+RewriteCond %{HTTP_HOST} ^(www\.)?suprachar\.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/suprachar/ [NC]
+RewriteRule ^(.*)$ /suprachar/$1 [L,NC]
+
+# Default page
+DirectoryIndex index.html

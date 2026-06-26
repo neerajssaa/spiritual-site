@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | SageCircle</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <nav class="nav container" aria-label="Primary">
+        <a class="brand" href="index.html">SageCircle</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="stories.html">Stories</a>
+          <a href="blog.html">Blog</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+      <div class="page-hero container">
+        <p class="eyebrow">Contact us</p>
+        <h1>Share your thoughts, stories, or questions.</h1>
+      </div>
+    </header>
+
+    <main class="container content-stack">
+      <section class="content-card contact-card">
+        <form class="contact-form">
+          <label>
+            Name
+            <input type="text" placeholder="Your name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" placeholder="Your email" required />
+          </label>
+          <label>
+            Message
+            <textarea rows="6" placeholder="Tell us what you would like to share" required></textarea>
+          </label>
+          <button type="submit">Send message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="container footer-content">
+      <p>© <span id="year"></span> SageCircle. We would love to hear from you.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

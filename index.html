@@ -22,20 +22,11 @@
         </div>
       </nav>
 
-      <div class="hero-carousel container">
-        <div class="hero-slider-nav">
-          <button class="control-btn hero-control" id="heroPrev" type="button" aria-label="Previous slide">← Prev</button>
-          <div class="carousel-dots hero-dots" aria-label="Hero slider navigation">
-            <button class="dot active" type="button" aria-label="Show slide 1"></button>
-            <button class="dot" type="button" aria-label="Show slide 2"></button>
-            <button class="dot" type="button" aria-label="Show slide 3"></button>
-          </div>
-          <button class="control-btn hero-control" id="heroNext" type="button" aria-label="Next slide">Next →</button>
-        </div>
-
-        <div class="hero-slides" id="heroCarousel">
+      <div class="hero-visual">
+        <div class="hero-carousel" id="heroCarousel">
           <div class="hero-slide active">
-            <div class="hero-slide-copy">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1600&q=80" alt="Peaceful sunrise and spiritual atmosphere" />
+            <div class="hero-slide-content">
               <p class="eyebrow">Sacred stories • uplifting reflections</p>
               <h1>Where timeless tales meet modern conversations.</h1>
               <p>Explore soulful stories, mindful lessons, and a warm space where seekers gather to reflect and grow together.</p>
@@ -44,13 +35,11 @@
                 <a class="btn btn-secondary" href="contact.html">Join the circle</a>
               </div>
             </div>
-            <div class="hero-media hero-media-card">
-              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80" alt="Peaceful sunrise and spiritual atmosphere" />
-            </div>
           </div>
 
           <div class="hero-slide">
-            <div class="hero-slide-copy">
+            <img src="https://images.unsplash.com/photo-1495202337139-bd4f3d1a22d8?auto=format&fit=crop&w=1600&q=80" alt="Spiritual lamp and peaceful setting" />
+            <div class="hero-slide-content">
               <p class="eyebrow">Inspired living</p>
               <h1>Transform everyday moments into meaningful rituals.</h1>
               <p>Bring calm, intention, and wisdom into your routine through stories, reflections, and shared experiences.</p>
@@ -59,13 +48,11 @@
                 <a class="btn btn-secondary" href="about.html">Learn more</a>
               </div>
             </div>
-            <div class="hero-media hero-media-card">
-              <img src="https://images.unsplash.com/photo-1495202337139-bd4f3d1a22d8?auto=format&fit=crop&w=1200&q=80" alt="Spiritual lamp and peaceful setting" />
-            </div>
           </div>
 
           <div class="hero-slide">
-            <div class="hero-slide-copy">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="A peaceful gathering in nature" />
+            <div class="hero-slide-content">
               <p class="eyebrow">Community connection</p>
               <h1>Share your voice with a thoughtful, growing circle.</h1>
               <p>Join a vibrant community of readers, writers, and devotees who believe wisdom grows through conversation.</p>
@@ -74,9 +61,16 @@
                 <a class="btn btn-secondary" href="blog.html">Visit the blog</a>
               </div>
             </div>
-            <div class="hero-media hero-media-card">
-              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="A peaceful gathering in nature" />
+          </div>
+
+          <div class="hero-controls" aria-label="Hero slideshow controls">
+            <button class="control-btn hero-control" id="heroPrev" type="button" aria-label="Previous slide">← Prev</button>
+            <div class="carousel-dots hero-dots" aria-label="Hero slider navigation">
+              <button class="dot active" type="button" aria-label="Show slide 1"></button>
+              <button class="dot" type="button" aria-label="Show slide 2"></button>
+              <button class="dot" type="button" aria-label="Show slide 3"></button>
             </div>
+            <button class="control-btn hero-control" id="heroNext" type="button" aria-label="Next slide">Next →</button>
           </div>
         </div>
       </div>

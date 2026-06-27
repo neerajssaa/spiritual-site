@@ -25,22 +25,59 @@
     </header>
 
     <main class="container content-stack">
-      <section class="content-card contact-card">
-        <form class="contact-form">
-          <label>
-            Name
-            <input type="text" placeholder="Your name" required />
-          </label>
-          <label>
-            Email
-            <input type="email" placeholder="Your email" required />
-          </label>
-          <label>
-            Message
-            <textarea rows="6" placeholder="Tell us what you would like to share" required></textarea>
-          </label>
-          <button type="submit">Send message</button>
-        </form>
+      <section class="contact-layout">
+        <div class="content-card contact-card">
+          <div class="form-status" id="formStatus" aria-live="polite" hidden></div>
+
+          <form class="contact-form" action="contact.php" method="post">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Your email" required />
+            </label>
+            <label>
+              Subject
+              <input type="text" name="subject" placeholder="How can we help?" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="6" placeholder="Tell us what you would like to share" required></textarea>
+            </label>
+            <button type="submit">Send message</button>
+          </form>
+        </div>
+
+        <aside class="content-card contact-details">
+          <h2>Get in touch</h2>
+          <p>We welcome your stories, questions, feedback, and invitations to connect.</p>
+
+          <div class="contact-list">
+            <div>
+              <strong>Address</strong>
+              <p>Suprachar Vibhag<br />Ashram Road, Rishikesh<br />Uttarakhand 249201, India</p>
+            </div>
+            <div>
+              <strong>Phone</strong>
+              <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+            </div>
+            <div>
+              <strong>Email</strong>
+              <p><a href="mailto:contact@supracharvibhag.org">contact@supracharvibhag.org</a></p>
+            </div>
+          </div>
+
+          <div class="map-card">
+            <iframe
+              src="https://www.google.com/maps?q=Rishikesh,Uttarakhand,India&output=embed"
+              title="Map to Suprachar Vibhag"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+        </aside>
       </section>
     </main>
 
@@ -49,5 +86,17 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const status = params.get('status');
+      const message = params.get('message');
+      const statusBox = document.getElementById('formStatus');
+
+      if (statusBox && status) {
+        statusBox.hidden = false;
+        statusBox.className = `form-status ${status === 'success' ? 'success' : 'error'}`;
+        statusBox.textContent = decodeURIComponent(message || (status === 'success' ? 'Thank you! Your message has been sent.' : 'Sorry, your message could not be sent.'));
+      }
+    </script>
   </body>
 </html>

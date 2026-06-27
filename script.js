@@ -15,11 +15,16 @@ function initCarousel(options) {
   let currentIndex = 0;
   let timer;
 
-  function showSlide(index) {
+  function showSlide(index, shouldScroll = false) {
     currentIndex = (index + slides.length) % slides.length;
 
     slides.forEach((slide, slideIndex) => {
-      slide.classList.toggle('active', slideIndex === currentIndex);
+      const isActive = slideIndex === currentIndex;
+      slide.classList.toggle('active', isActive);
+
+      if (shouldScroll && isActive) {
+        slide.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+      }
     });
 
     dots.forEach((dot, dotIndex) => {
@@ -36,19 +41,19 @@ function initCarousel(options) {
 
   if (prev && next) {
     prev.addEventListener('click', () => {
-      showSlide(currentIndex - 1);
+      showSlide(currentIndex - 1, true);
       startAutoPlay();
     });
 
     next.addEventListener('click', () => {
-      showSlide(currentIndex + 1);
+      showSlide(currentIndex + 1, true);
       startAutoPlay();
     });
   }
 
   dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
-      showSlide(index);
+      showSlide(index, true);
       startAutoPlay();
     });
   });
